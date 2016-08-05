@@ -1,0 +1,6 @@
+framework module Pods_PackedTravel {
+  umbrella header "Pods-PackedTravel-umbrella.h"
+
+  export *
+  module * { export * }
+}
