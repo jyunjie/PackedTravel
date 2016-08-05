@@ -8,22 +8,34 @@
 
 /* Begin PBXBuildFile section */
 		2850AE911D5433170046664A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AE901D5433170046664A /* AppDelegate.swift */; };
-		2850AE931D5433170046664A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AE921D5433170046664A /* ViewController.swift */; };
+		2850AE931D5433170046664A /* ParameterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AE921D5433170046664A /* ParameterViewController.swift */; };
 		2850AE961D5433170046664A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2850AE941D5433170046664A /* Main.storyboard */; };
 		2850AE991D5433170046664A /* PackedTravel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2850AE971D5433170046664A /* PackedTravel.xcdatamodeld */; };
 		2850AE9B1D5433170046664A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2850AE9A1D5433170046664A /* Assets.xcassets */; };
 		2850AE9E1D5433170046664A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2850AE9C1D5433170046664A /* LaunchScreen.storyboard */; };
+		2850AEA61D5440770046664A /* PlacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AEA51D5440770046664A /* PlacesViewController.swift */; };
+		2850AEA81D5444F20046664A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2850AEA71D5444F20046664A /* .gitignore */; };
+		2850AEAA1D54452E0046664A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AEA91D54452E0046664A /* ListViewController.swift */; };
+		2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AEAB1D54453C0046664A /* MapViewController.swift */; };
+		36B7F26A094E29AB32539D66 /* Pods_PackedTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0808358FDD5E05EE688F9BE6 /* Pods_PackedTravel.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0808358FDD5E05EE688F9BE6 /* Pods_PackedTravel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PackedTravel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2850AE8D1D5433170046664A /* PackedTravel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PackedTravel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2850AE901D5433170046664A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2850AE921D5433170046664A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2850AE921D5433170046664A /* ParameterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParameterViewController.swift; sourceTree = "<group>"; };
 		2850AE951D5433170046664A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2850AE981D5433170046664A /* PackedTravel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PackedTravel.xcdatamodel; sourceTree = "<group>"; };
 		2850AE9A1D5433170046664A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2850AE9D1D5433170046664A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2850AE9F1D5433170046664A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2850AEA51D5440770046664A /* PlacesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlacesViewController.swift; sourceTree = "<group>"; };
+		2850AEA71D5444F20046664A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2850AEA91D54452E0046664A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		2850AEAB1D54453C0046664A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		78A62F517927013AFAE6D1A8 /* Pods-PackedTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.debug.xcconfig"; sourceTree = "<group>"; };
+		955C9EAE0238E1D709056A50 /* Pods-PackedTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36B7F26A094E29AB32539D66 /* Pods_PackedTravel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		068E1E651D7E80AB73B7E43C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78A62F517927013AFAE6D1A8 /* Pods-PackedTravel.debug.xcconfig */,
+				955C9EAE0238E1D709056A50 /* Pods-PackedTravel.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		2850AE841D5433170046664A = {
 			isa = PBXGroup;
 			children = (
+				2850AEA71D5444F20046664A /* .gitignore */,
 				2850AE8F1D5433170046664A /* PackedTravel */,
 				2850AE8E1D5433170046664A /* Products */,
+				068E1E651D7E80AB73B7E43C /* Pods */,
+				D6028F65081DFD1F6DAEE79D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +82,25 @@
 			isa = PBXGroup;
 			children = (
 				2850AE901D5433170046664A /* AppDelegate.swift */,
-				2850AE921D5433170046664A /* ViewController.swift */,
+				2850AE921D5433170046664A /* ParameterViewController.swift */,
 				2850AE941D5433170046664A /* Main.storyboard */,
+				2850AEA51D5440770046664A /* PlacesViewController.swift */,
+				2850AEA91D54452E0046664A /* ListViewController.swift */,
+				2850AEAB1D54453C0046664A /* MapViewController.swift */,
 				2850AE9A1D5433170046664A /* Assets.xcassets */,
 				2850AE9C1D5433170046664A /* LaunchScreen.storyboard */,
 				2850AE9F1D5433170046664A /* Info.plist */,
 				2850AE971D5433170046664A /* PackedTravel.xcdatamodeld */,
 			);
 			path = PackedTravel;
+			sourceTree = "<group>";
+		};
+		D6028F65081DFD1F6DAEE79D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0808358FDD5E05EE688F9BE6 /* Pods_PackedTravel.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2850AEA21D5433170046664A /* Build configuration list for PBXNativeTarget "PackedTravel" */;
 			buildPhases = (
+				F7D11B7A2DAB8A7E351FEBCA /* [CP] Check Pods Manifest.lock */,
 				2850AE891D5433170046664A /* Sources */,
 				2850AE8A1D5433170046664A /* Frameworks */,
 				2850AE8B1D5433170046664A /* Resources */,
+				4D388B5045D2ADF47FDD3D24 /* [CP] Embed Pods Frameworks */,
+				89DF7FF717C82F23A0BE151B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +165,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2850AEA81D5444F20046664A /* .gitignore in Resources */,
 				2850AE9E1D5433170046664A /* LaunchScreen.storyboard in Resources */,
 				2850AE9B1D5433170046664A /* Assets.xcassets in Resources */,
 				2850AE961D5433170046664A /* Main.storyboard in Resources */,
@@ -134,13 +174,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4D388B5045D2ADF47FDD3D24 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		89DF7FF717C82F23A0BE151B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F7D11B7A2DAB8A7E351FEBCA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2850AE891D5433170046664A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2850AEA61D5440770046664A /* PlacesViewController.swift in Sources */,
+				2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */,
 				2850AE991D5433170046664A /* PackedTravel.xcdatamodeld in Sources */,
-				2850AE931D5433170046664A /* ViewController.swift in Sources */,
+				2850AE931D5433170046664A /* ParameterViewController.swift in Sources */,
+				2850AEAA1D54452E0046664A /* ListViewController.swift in Sources */,
 				2850AE911D5433170046664A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +345,7 @@
 		};
 		2850AEA31D5433170046664A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78A62F517927013AFAE6D1A8 /* Pods-PackedTravel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PackedTravel/Info.plist;
@@ -265,6 +357,7 @@
 		};
 		2850AEA41D5433170046664A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 955C9EAE0238E1D709056A50 /* Pods-PackedTravel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = PackedTravel/Info.plist;
@@ -293,6 +386,7 @@
 				2850AEA41D5433170046664A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
