@@ -19,6 +19,7 @@
 		2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AEAB1D54453C0046664A /* MapViewController.swift */; };
 		28DFFE991D5824FC0033586C /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE981D5824FC0033586C /* Business.swift */; };
 		28DFFE9B1D58254F0033586C /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE9A1D58254F0033586C /* YelpClient.swift */; };
+		28DFFE9F1D5834AD0033586C /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */; };
 		36B7F26A094E29AB32539D66 /* Pods_PackedTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0808358FDD5E05EE688F9BE6 /* Pods_PackedTravel.framework */; };
 /* End PBXBuildFile section */
 
@@ -38,6 +39,7 @@
 		2850AEAB1D54453C0046664A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		28DFFE981D5824FC0033586C /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		28DFFE9A1D58254F0033586C /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
 		78A62F517927013AFAE6D1A8 /* Pods-PackedTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		955C9EAE0238E1D709056A50 /* Pods-PackedTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 				2850AE921D5433170046664A /* ParameterViewController.swift */,
 				2850AE941D5433170046664A /* Main.storyboard */,
 				2850AEA51D5440770046664A /* PlacesViewController.swift */,
+				28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */,
 				2850AEA91D54452E0046664A /* ListViewController.swift */,
 				2850AEAB1D54453C0046664A /* MapViewController.swift */,
 				2850AE9A1D5433170046664A /* Assets.xcassets */,
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28DFFE9F1D5834AD0033586C /* BackgroundKolodaAnimator.swift in Sources */,
 				2850AEA61D5440770046664A /* PlacesViewController.swift in Sources */,
 				28DFFE991D5824FC0033586C /* Business.swift in Sources */,
 				2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */,

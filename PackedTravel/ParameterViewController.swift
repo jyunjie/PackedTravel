@@ -45,6 +45,14 @@ class ParameterViewController: UIViewController {
        
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "placeSegue"{
+        let tabCtrl = segue.destinationViewController as! UITabBarController
+        let destVc = tabCtrl.viewControllers![0] as! PlacesViewController
+        destVc.businesses = self.businesses
+        }
+        
+    }
     
 }
 
