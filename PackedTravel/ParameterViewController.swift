@@ -9,8 +9,6 @@
 import UIKit
 
 class ParameterViewController: UIViewController {
-    
-    @IBOutlet var tableView: UITableView!
     var businesses = [Business]()
     
     
