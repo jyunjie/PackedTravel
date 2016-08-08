@@ -17,6 +17,8 @@
 		2850AEA81D5444F20046664A /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2850AEA71D5444F20046664A /* .gitignore */; };
 		2850AEAA1D54452E0046664A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AEA91D54452E0046664A /* ListViewController.swift */; };
 		2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2850AEAB1D54453C0046664A /* MapViewController.swift */; };
+		28DFFE991D5824FC0033586C /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE981D5824FC0033586C /* Business.swift */; };
+		28DFFE9B1D58254F0033586C /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE9A1D58254F0033586C /* YelpClient.swift */; };
 		36B7F26A094E29AB32539D66 /* Pods_PackedTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0808358FDD5E05EE688F9BE6 /* Pods_PackedTravel.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,6 +36,8 @@
 		2850AEA71D5444F20046664A /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		2850AEA91D54452E0046664A /* ListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		2850AEAB1D54453C0046664A /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		28DFFE981D5824FC0033586C /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
+		28DFFE9A1D58254F0033586C /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		78A62F517927013AFAE6D1A8 /* Pods-PackedTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		955C9EAE0238E1D709056A50 /* Pods-PackedTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +86,8 @@
 			isa = PBXGroup;
 			children = (
 				2850AE901D5433170046664A /* AppDelegate.swift */,
+				28DFFE981D5824FC0033586C /* Business.swift */,
+				28DFFE9A1D58254F0033586C /* YelpClient.swift */,
 				2850AE921D5433170046664A /* ParameterViewController.swift */,
 				2850AE941D5433170046664A /* Main.storyboard */,
 				2850AEA51D5440770046664A /* PlacesViewController.swift */,
@@ -228,8 +234,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2850AEA61D5440770046664A /* PlacesViewController.swift in Sources */,
+				28DFFE991D5824FC0033586C /* Business.swift in Sources */,
 				2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */,
 				2850AE991D5433170046664A /* PackedTravel.xcdatamodeld in Sources */,
+				28DFFE9B1D58254F0033586C /* YelpClient.swift in Sources */,
 				2850AE931D5433170046664A /* ParameterViewController.swift in Sources */,
 				2850AEAA1D54452E0046664A /* ListViewController.swift in Sources */,
 				2850AE911D5433170046664A /* AppDelegate.swift in Sources */,
