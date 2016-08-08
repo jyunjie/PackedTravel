@@ -39,6 +39,7 @@ class PlacesViewController: UIViewController {
     }
     
     @IBAction func rightButtonTapped() {
+        print("1")
         kolodaView?.swipe(SwipeResultDirection.Right)
     }
     
