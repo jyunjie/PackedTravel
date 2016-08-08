@@ -7,4 +7,7 @@ target 'PackedTravel' do
 
   # Pods for PackedTravel
     pod 'Koloda', '~> 3.1.1'
+    pod 'AFNetworking', '~> 2.5'
+    pod 'BDBOAuth1Manager'
+    
 end
