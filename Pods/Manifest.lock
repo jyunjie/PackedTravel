@@ -26,18 +26,23 @@ PODS:
   - Koloda (3.1.1):
     - pop (~> 1.0)
   - pop (1.0.9)
+  - SDWebImage (3.8.1):
+    - SDWebImage/Core (= 3.8.1)
+  - SDWebImage/Core (3.8.1)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - BDBOAuth1Manager
   - Koloda (~> 3.1.1)
+  - SDWebImage
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
   Koloda: 782e61549cafec9fd69fc70c4a8b54bce997894d
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
 
-PODFILE CHECKSUM: a7b6e6fc63eb97a508e0523cbe5412897942aa2b
+PODFILE CHECKSUM: 4288fc6a22781a808da318ebced7312d78773303
 
 COCOAPODS: 1.0.1

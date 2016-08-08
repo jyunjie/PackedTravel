@@ -8,11 +8,14 @@
 
 import UIKit
 import Koloda
+import SDWebImage
 
 class PlacesViewController: UIViewController, KolodaViewDelegate, KolodaViewDataSource {
     @IBOutlet weak var kolodaView: KolodaView!
     weak var dataSource: KolodaViewDataSource!
     weak var delegate: KolodaViewDelegate?
+    var businesses = [Business]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +38,12 @@ class PlacesViewController: UIViewController, KolodaViewDelegate, KolodaViewData
     }
     
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
-        return UIImageView(image: images[Int(index)])
+        let indexPath: NSIndexPath = NSIndexPath(forRow: Int(index), inSection: 0)
+        let selectedItems = businesses[indexPath.row]
+        let imageUrl =  selectedItems.imageURL!
+        let image = UIImageView()
+        image.sd_setImageWithURL(imageUrl)
+        return image
     }
     
     func koloda(koloda: KolodaView, viewForCardOverlayAtIndex index: UInt) -> OverlayView? {

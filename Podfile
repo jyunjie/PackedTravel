@@ -9,5 +9,6 @@ target 'PackedTravel' do
     pod 'Koloda', '~> 3.1.1'
     pod 'AFNetworking', '~> 2.5'
     pod 'BDBOAuth1Manager'
+    pod 'SDWebImage'
     
 end
