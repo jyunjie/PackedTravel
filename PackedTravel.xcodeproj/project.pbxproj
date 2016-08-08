@@ -20,6 +20,10 @@
 		28DFFE991D5824FC0033586C /* Business.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE981D5824FC0033586C /* Business.swift */; };
 		28DFFE9B1D58254F0033586C /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE9A1D58254F0033586C /* YelpClient.swift */; };
 		28DFFE9F1D5834AD0033586C /* BackgroundKolodaAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */; };
+		28DFFEA11D585D550033586C /* CustomKolodaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFEA01D585D550033586C /* CustomKolodaView.swift */; };
+		28DFFEA31D585D7B0033586C /* CustomOverlayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFEA21D585D7B0033586C /* CustomOverlayView.swift */; };
+		28DFFEA51D585DF20033586C /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DFFEA41D585DF20033586C /* OverlayView.xib */; };
+		28DFFEA71D585E4A0033586C /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DFFEA61D585E4A0033586C /* CustomOverlayView.xib */; };
 		36B7F26A094E29AB32539D66 /* Pods_PackedTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0808358FDD5E05EE688F9BE6 /* Pods_PackedTravel.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +44,10 @@
 		28DFFE981D5824FC0033586C /* Business.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Business.swift; sourceTree = "<group>"; };
 		28DFFE9A1D58254F0033586C /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
 		28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundKolodaAnimator.swift; sourceTree = "<group>"; };
+		28DFFEA01D585D550033586C /* CustomKolodaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomKolodaView.swift; sourceTree = "<group>"; };
+		28DFFEA21D585D7B0033586C /* CustomOverlayView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomOverlayView.swift; sourceTree = "<group>"; };
+		28DFFEA41D585DF20033586C /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
+		28DFFEA61D585E4A0033586C /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		78A62F517927013AFAE6D1A8 /* Pods-PackedTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		955C9EAE0238E1D709056A50 /* Pods-PackedTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,6 +101,10 @@
 				2850AE921D5433170046664A /* ParameterViewController.swift */,
 				2850AE941D5433170046664A /* Main.storyboard */,
 				2850AEA51D5440770046664A /* PlacesViewController.swift */,
+				28DFFEA01D585D550033586C /* CustomKolodaView.swift */,
+				28DFFEA21D585D7B0033586C /* CustomOverlayView.swift */,
+				28DFFEA41D585DF20033586C /* OverlayView.xib */,
+				28DFFEA61D585E4A0033586C /* CustomOverlayView.xib */,
 				28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */,
 				2850AEA91D54452E0046664A /* ListViewController.swift */,
 				2850AEAB1D54453C0046664A /* MapViewController.swift */,
@@ -176,6 +188,8 @@
 			files = (
 				2850AEA81D5444F20046664A /* .gitignore in Resources */,
 				2850AE9E1D5433170046664A /* LaunchScreen.storyboard in Resources */,
+				28DFFEA71D585E4A0033586C /* CustomOverlayView.xib in Resources */,
+				28DFFEA51D585DF20033586C /* OverlayView.xib in Resources */,
 				2850AE9B1D5433170046664A /* Assets.xcassets in Resources */,
 				2850AE961D5433170046664A /* Main.storyboard in Resources */,
 			);
@@ -239,9 +253,11 @@
 				28DFFE9F1D5834AD0033586C /* BackgroundKolodaAnimator.swift in Sources */,
 				2850AEA61D5440770046664A /* PlacesViewController.swift in Sources */,
 				28DFFE991D5824FC0033586C /* Business.swift in Sources */,
+				28DFFEA11D585D550033586C /* CustomKolodaView.swift in Sources */,
 				2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */,
 				2850AE991D5433170046664A /* PackedTravel.xcdatamodeld in Sources */,
 				28DFFE9B1D58254F0033586C /* YelpClient.swift in Sources */,
+				28DFFEA31D585D7B0033586C /* CustomOverlayView.swift in Sources */,
 				2850AE931D5433170046664A /* ParameterViewController.swift in Sources */,
 				2850AEAA1D54452E0046664A /* ListViewController.swift in Sources */,
 				2850AE911D5433170046664A /* AppDelegate.swift in Sources */,
