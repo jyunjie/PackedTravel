@@ -20,10 +20,8 @@ class ParameterViewController: UIViewController {
         
     }
     
-    // ,"hot_air_balloons","sailing","skydiving","surfing","waterparks","zoos","museums","festivals",,"restaurants","souvenirs"
-    
     func findFirstHalf() {
-        Business.searchWithTerm("", sort:.BestMatched , categories:["nightlife","restaurants","festivals"] , deals: nil, radius_filter: 50000,longitude: 3.105706 ,latitude:101.661973, completion: { (businesses:[Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("", sort:.HighestRated , categories:["amusementparks","waterparks","gardens","hot_air_balloons","aquariums","festivals"] , deals: nil, radius_filter: 50000,longitude: 3.105706 ,latitude:101.661973, completion: { (businesses:[Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             for business in businesses {
                 self.businesses.append(business)
@@ -39,11 +37,11 @@ class ParameterViewController: UIViewController {
         })
         self.findSecondHalf()
     }
-    
+
     
     
     func findSecondHalf() {
-        Business.searchWithTerm("", sort: .BestMatched , categories:["wineries","museums","zoos","tours","museums"], deals: nil, radius_filter: 20000, longitude: 3.105706 ,latitude:101.661973 ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("", sort: .HighestRated , categories:["museums","fleamarkets","tours","fireworks","localflavor"], deals: nil, radius_filter: 20000, longitude: 3.105706 ,latitude:101.661973 ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
             for business in businesses {
                 self.businesses.append(business)
                 print(business.name!)

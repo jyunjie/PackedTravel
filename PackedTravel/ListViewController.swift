@@ -11,15 +11,23 @@ import UIKit
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     var selectedBusinesses = [Business]()
+    var sortedBikeStation = [Business]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(selectedBusinesses)
-        // Do any additional setup after loading the view.
+
+        self.selectedBusinesses = self.selectedBusinesses.sort({ (first, second) -> Bool in
+            return first.distance < second.distance
+        })
+        self.tableView.reloadData()
     }
     
     override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
+        super.viewDidLoad()
+        self.selectedBusinesses = self.selectedBusinesses.sort({ (first, second) -> Bool in
+            return first.distance < second.distance
+        })
         self.tableView.reloadData()
     }
     
@@ -36,7 +44,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = self.tableView.dequeueReusableCellWithIdentifier("placeCell", forIndexPath: indexPath)
         let selectedBusiness = self.selectedBusinesses[indexPath.row]
         cell.textLabel?.text = selectedBusiness.name
-        cell.detailTextLabel?.text = selectedBusiness.distance
+        cell.detailTextLabel?.text = String(format: "%.2f", selectedBusiness.distance!)
         return cell
     }
     /*
