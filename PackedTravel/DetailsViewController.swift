@@ -21,7 +21,7 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text = business.name
         locationLabel.text = business.address
-        distanceLabel.text = business.distance
+        distanceLabel.text = String(business.distance)
         let reviewCount = business.reviewCount as! Int
         ratingLabel.text = String("\(reviewCount)reviews")
         ratingImageView.sd_setImageWithURL(business.ratingImageURL!)
