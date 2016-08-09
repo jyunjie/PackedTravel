@@ -99,27 +99,43 @@
 		2850AE8F1D5433170046664A /* PackedTravel */ = {
 			isa = PBXGroup;
 			children = (
-				2850AE901D5433170046664A /* AppDelegate.swift */,
-				28DFFE981D5824FC0033586C /* Business.swift */,
-				28DFFE9A1D58254F0033586C /* YelpClient.swift */,
-				2850AE921D5433170046664A /* ParameterViewController.swift */,
-				28DFFEAA1D5982030033586C /* Location.swift */,
 				2850AE941D5433170046664A /* Main.storyboard */,
-				2850AEA51D5440770046664A /* PlacesViewController.swift */,
 				28DFFEA81D5893D00033586C /* DetailsViewController.swift */,
-				28DFFEA01D585D550033586C /* CustomKolodaView.swift */,
-				28DFFEA21D585D7B0033586C /* CustomOverlayView.swift */,
+				65F86D551D598A0600F6D8CC /* Controllers */,
+				65F86D561D598A2600F6D8CC /* models */,
 				28DFFEA41D585DF20033586C /* OverlayView.xib */,
 				28DFFEA61D585E4A0033586C /* CustomOverlayView.xib */,
-				28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */,
-				2850AEA91D54452E0046664A /* ListViewController.swift */,
-				2850AEAB1D54453C0046664A /* MapViewController.swift */,
 				2850AE9A1D5433170046664A /* Assets.xcassets */,
 				2850AE9C1D5433170046664A /* LaunchScreen.storyboard */,
 				2850AE9F1D5433170046664A /* Info.plist */,
 				2850AE971D5433170046664A /* PackedTravel.xcdatamodeld */,
 			);
 			path = PackedTravel;
+			sourceTree = "<group>";
+		};
+		65F86D551D598A0600F6D8CC /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				2850AE921D5433170046664A /* ParameterViewController.swift */,
+				2850AEA51D5440770046664A /* PlacesViewController.swift */,
+				2850AEA91D54452E0046664A /* ListViewController.swift */,
+				2850AEAB1D54453C0046664A /* MapViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		65F86D561D598A2600F6D8CC /* models */ = {
+			isa = PBXGroup;
+			children = (
+				28DFFE981D5824FC0033586C /* Business.swift */,
+				2850AE901D5433170046664A /* AppDelegate.swift */,
+				28DFFE9A1D58254F0033586C /* YelpClient.swift */,
+				28DFFEAA1D5982030033586C /* Location.swift */,
+				28DFFEA01D585D550033586C /* CustomKolodaView.swift */,
+				28DFFEA21D585D7B0033586C /* CustomOverlayView.swift */,
+				28DFFE9E1D5834AD0033586C /* BackgroundKolodaAnimator.swift */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 		D6028F65081DFD1F6DAEE79D /* Frameworks */ = {

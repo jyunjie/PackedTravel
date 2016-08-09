@@ -7,32 +7,27 @@
 //
 
 import UIKit
-
+import SDWebImage
 class DetailsViewController: UIViewController {
     
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var ratingImageView: UIImageView!
+    @IBOutlet weak var distanceLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     var business : Business!
-    
-    @IBOutlet var textLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        textLabel.text = business.name
-        // Do any additional setup after loading the view.
+        nameLabel.text = business.name
+        locationLabel.text = business.address
+        distanceLabel.text = business.distance
+        let reviewCount = business.reviewCount as! Int
+        ratingLabel.text = String("\(reviewCount)reviews")
+        ratingImageView.sd_setImageWithURL(business.ratingImageURL!)
+        imageView.sd_setImageWithURL(business.imageURL!)
+        imageView.contentMode = .ScaleToFill
+        
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+ 
 }

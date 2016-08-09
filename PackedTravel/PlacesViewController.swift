@@ -123,7 +123,10 @@ extension PlacesViewController: KolodaViewDataSource {
         return NSBundle.mainBundle().loadNibNamed("CustomOverlayView",
                                                   owner: self, options: nil)[0] as? OverlayView
     }
+    
+
 }
+
 
   
     
