@@ -17,9 +17,16 @@ class ParameterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         findFirstHalf()  // hard corded, remove this when insert realtime location
-        
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ParameterViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
     }
     
+
+
+func dismissKeyboard() {
+    view.endEditing(true)
+}
+
     func findFirstHalf() {
         Business.searchWithTerm("", sort:.HighestRated , categories:["amusementparks","waterparks","gardens","hot_air_balloons","aquariums","festivals"] , deals: nil, radius_filter: 50000,longitude: 3.105706 ,latitude:101.661973, completion: { (businesses:[Business]!, error: NSError!) -> Void in
             self.businesses = businesses
