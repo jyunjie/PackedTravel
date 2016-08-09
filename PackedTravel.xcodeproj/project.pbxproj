@@ -101,8 +101,8 @@
 			children = (
 				2850AE941D5433170046664A /* Main.storyboard */,
 				28DFFEA81D5893D00033586C /* DetailsViewController.swift */,
-				65F86D551D598A0600F6D8CC /* Controllers */,
 				65F86D561D598A2600F6D8CC /* models */,
+				65F86D551D598A0600F6D8CC /* Controllers */,
 				28DFFEA41D585DF20033586C /* OverlayView.xib */,
 				28DFFEA61D585E4A0033586C /* CustomOverlayView.xib */,
 				2850AE9A1D5433170046664A /* Assets.xcassets */,
