@@ -16,7 +16,7 @@ class ParameterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        findFirstHalf()  // hard corded, remove this when insert realtime location
         
     }
     
