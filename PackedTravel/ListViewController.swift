@@ -8,7 +8,8 @@
 
 import UIKit
 
-class ListViewController: UIViewController {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet var tableView: UITableView!
     var selectedBusinesses = [Business]()
     
     override func viewDidLoad() {
@@ -16,13 +17,28 @@ class ListViewController: UIViewController {
         print(selectedBusinesses)
         // Do any additional setup after loading the view.
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        self.tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.selectedBusinesses.count
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = self.tableView.dequeueReusableCellWithIdentifier("placeCell", forIndexPath: indexPath)
+        let selectedBusiness = self.selectedBusinesses[indexPath.row]
+        cell.textLabel?.text = selectedBusiness.name
+        cell.detailTextLabel?.text = selectedBusiness.distance
+        return cell
+    }
     /*
     // MARK: - Navigation
 
