@@ -14,7 +14,7 @@ class Business: NSObject {
     let address: String?
     let imageURL: NSURL?
     let categories: String?
-    let distance: String?
+    let distance: Double?
     let ratingImageURL: NSURL?
     let reviewCount: NSNumber?
     var longitude = NSNumber()
@@ -70,10 +70,9 @@ class Business: NSObject {
             categories = nil
         }
         
-        let distanceMeters = dictionary["distance"] as? NSNumber
+        let distanceMeters = dictionary["distance"] as? Double
         if distanceMeters != nil {
-            let milesPerMeter = 0.000621371
-            distance = String(format: "%.2f mi", milesPerMeter * distanceMeters!.doubleValue)
+            distance = distanceMeters
         } else {
             distance = nil
         }
