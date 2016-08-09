@@ -11,9 +11,18 @@ import UIKit
 class ParameterViewController: UIViewController {
     var businesses = [Business]()
     
+    @IBOutlet var distanceTxtFld: UITextField!
+    @IBOutlet var locationTxtFld: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        
+    }
+    
+    // ,"hot_air_balloons","sailing","skydiving","surfing","waterparks","zoos","museums","festivals",,"restaurants","souvenirs"
+    
+    func findFirstHalf() {
         Business.searchWithTerm("", sort:.BestMatched , categories:["nightlife","restaurants","festivals"] , deals: nil, radius_filter: 50000,longitude: 3.105706 ,latitude:101.661973, completion: { (businesses:[Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             for business in businesses {
@@ -29,9 +38,9 @@ class ParameterViewController: UIViewController {
             
         })
         self.findSecondHalf()
-        
     }
-    // ,"hot_air_balloons","sailing","skydiving","surfing","waterparks","zoos","museums","festivals",,"restaurants","souvenirs"
+    
+    
     
     func findSecondHalf() {
         Business.searchWithTerm("", sort: .BestMatched , categories:["wineries","museums","zoos","tours","museums"], deals: nil, radius_filter: 20000, longitude: 3.105706 ,latitude:101.661973 ,completion: { (businesses:[Business]!, error: NSError!) -> Void in

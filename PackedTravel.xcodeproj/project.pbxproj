@@ -25,6 +25,7 @@
 		28DFFEA51D585DF20033586C /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DFFEA41D585DF20033586C /* OverlayView.xib */; };
 		28DFFEA71D585E4A0033586C /* CustomOverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28DFFEA61D585E4A0033586C /* CustomOverlayView.xib */; };
 		28DFFEA91D5893D00033586C /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFEA81D5893D00033586C /* DetailsViewController.swift */; };
+		28DFFEAB1D5982030033586C /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28DFFEAA1D5982030033586C /* Location.swift */; };
 		36B7F26A094E29AB32539D66 /* Pods_PackedTravel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0808358FDD5E05EE688F9BE6 /* Pods_PackedTravel.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		28DFFEA41D585DF20033586C /* OverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
 		28DFFEA61D585E4A0033586C /* CustomOverlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomOverlayView.xib; sourceTree = "<group>"; };
 		28DFFEA81D5893D00033586C /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		28DFFEAA1D5982030033586C /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		78A62F517927013AFAE6D1A8 /* Pods-PackedTravel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.debug.xcconfig"; sourceTree = "<group>"; };
 		955C9EAE0238E1D709056A50 /* Pods-PackedTravel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PackedTravel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PackedTravel/Pods-PackedTravel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -101,6 +103,7 @@
 				28DFFE981D5824FC0033586C /* Business.swift */,
 				28DFFE9A1D58254F0033586C /* YelpClient.swift */,
 				2850AE921D5433170046664A /* ParameterViewController.swift */,
+				28DFFEAA1D5982030033586C /* Location.swift */,
 				2850AE941D5433170046664A /* Main.storyboard */,
 				2850AEA51D5440770046664A /* PlacesViewController.swift */,
 				28DFFEA81D5893D00033586C /* DetailsViewController.swift */,
@@ -259,6 +262,7 @@
 				28DFFEA11D585D550033586C /* CustomKolodaView.swift in Sources */,
 				2850AEAC1D54453C0046664A /* MapViewController.swift in Sources */,
 				2850AE991D5433170046664A /* PackedTravel.xcdatamodeld in Sources */,
+				28DFFEAB1D5982030033586C /* Location.swift in Sources */,
 				28DFFE9B1D58254F0033586C /* YelpClient.swift in Sources */,
 				28DFFEA31D585D7B0033586C /* CustomOverlayView.swift in Sources */,
 				2850AE931D5433170046664A /* ParameterViewController.swift in Sources */,

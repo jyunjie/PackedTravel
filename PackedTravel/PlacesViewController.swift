@@ -21,6 +21,7 @@ class PlacesViewController: UIViewController {
     @IBOutlet  var kolodaView: CustomKolodaView!
 
     var businesses = [Business]()
+    var selectedBusinesses = [Business]()
     
     
     override func viewDidLoad() {
@@ -42,6 +43,10 @@ class PlacesViewController: UIViewController {
         print(self.kolodaView.currentCardIndex)
         let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
         let selectedItems = businesses[indexPath.row]
+        selectedBusinesses.append(selectedItems)
+        let barViewControllers = self.tabBarController?.viewControllers
+        let svc = barViewControllers![1] as! ListViewController
+        svc.selectedBusinesses = selectedBusinesses
         print(selectedItems.name)
         kolodaView?.swipe(SwipeResultDirection.Right)
     }
