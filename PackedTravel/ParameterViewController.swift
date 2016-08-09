@@ -14,7 +14,7 @@ class ParameterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        Business.searchWithTerm("", sort:nil, categories:["nightlife","restaurants","festivals"] , deals: nil, radius_filter: 50000,longitude: 3.105706 ,latitude:101.661973, completion: { (businesses:[Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("", sort:.BestMatched , categories:["nightlife","restaurants","festivals"] , deals: nil, radius_filter: 50000,longitude: 3.105706 ,latitude:101.661973, completion: { (businesses:[Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             for business in businesses {
                 self.businesses.append(business)
@@ -34,7 +34,7 @@ class ParameterViewController: UIViewController {
     // ,"hot_air_balloons","sailing","skydiving","surfing","waterparks","zoos","museums","festivals",,"restaurants","souvenirs"
     
     func findSecondHalf() {
-        Business.searchWithTerm("", sort: nil, categories:["wineries","museums","zoos","tours","museums"], deals: nil, radius_filter: 20000, longitude: 3.105706 ,latitude:101.661973 ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("", sort: .BestMatched , categories:["wineries","museums","zoos","tours","museums"], deals: nil, radius_filter: 20000, longitude: 3.105706 ,latitude:101.661973 ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
             for business in businesses {
                 self.businesses.append(business)
                 print(business.name!)
@@ -46,7 +46,8 @@ class ParameterViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "placeSegue"{
         let tabCtrl = segue.destinationViewController as! UITabBarController
-        let destVc = tabCtrl.viewControllers![0] as! PlacesViewController
+        let navVc = tabCtrl.viewControllers?.first as! UINavigationController
+        let destVc = navVc.viewControllers[0] as! PlacesViewController
         destVc.businesses = self.businesses
         }
         

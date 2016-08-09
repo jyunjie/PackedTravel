@@ -39,12 +39,28 @@ class PlacesViewController: UIViewController {
     }
     
     @IBAction func rightButtonTapped() {
-        print("1")
+        print(self.kolodaView.currentCardIndex)
+        let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
+        let selectedItems = businesses[indexPath.row]
+        print(selectedItems.name)
         kolodaView?.swipe(SwipeResultDirection.Right)
     }
     
     @IBAction func undoButtonTapped() {
         kolodaView?.revertAction()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "detailSegue" {
+            let destination = segue.destinationViewController as? DetailsViewController
+            let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
+            let selectedItems = businesses[indexPath.row]
+            destination!.business = selectedItems
+        
+        } else {
+            print("selected cell")
+        }
+        
     }
     
 }
@@ -56,7 +72,10 @@ extension PlacesViewController: KolodaViewDelegate {
     }
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
-        UIApplication.sharedApplication().openURL(NSURL(string: "http://yalantis.com/")!)
+        let indexPath: NSIndexPath = NSIndexPath(forRow: Int(index), inSection: 0)
+        let selectedItems = businesses[indexPath.row]
+        self.performSegueWithIdentifier("detailSegue", sender: self)
+        
     }
     
     func kolodaShouldApplyAppearAnimation(koloda: KolodaView) -> Bool {
