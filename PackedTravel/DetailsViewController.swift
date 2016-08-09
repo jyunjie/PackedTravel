@@ -10,6 +10,9 @@ import UIKit
 import SDWebImage
 class DetailsViewController: UIViewController {
     
+    @IBOutlet weak var userReviewLabel: UILabel!
+    @IBOutlet weak var userProfileImageView: UIImageView!
+    @IBOutlet weak var phoneNumberLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var ratingLabel: UILabel!
     @IBOutlet weak var ratingImageView: UIImageView!
@@ -21,12 +24,21 @@ class DetailsViewController: UIViewController {
         super.viewDidLoad()
         nameLabel.text = business.name
         locationLabel.text = business.address
-        distanceLabel.text = business.distance
+        let distance = Int(business.distance!)
+        distanceLabel.text = String("\(distance/1000)km")
         let reviewCount = business.reviewCount as! Int
-        ratingLabel.text = String("\(reviewCount)reviews")
+        ratingLabel.text = String("\(reviewCount) reviews")
         ratingImageView.sd_setImageWithURL(business.ratingImageURL!)
         imageView.sd_setImageWithURL(business.imageURL!)
         imageView.contentMode = .ScaleToFill
+        if let number = business.phoneNum{
+            phoneNumberLabel.text = String(number)
+        }else{
+            phoneNumberLabel.text = ""
+        }
+        
+        userReviewLabel.text = business.reviewText
+        userProfileImageView.sd_setImageWithURL(business.reviewUserImage)
         
     }
  
