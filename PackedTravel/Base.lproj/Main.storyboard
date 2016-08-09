@@ -87,6 +87,10 @@
                             <constraint firstItem="3xZ-AB-SdA" firstAttribute="trailing" secondItem="65H-ri-UXE" secondAttribute="trailing" constant="-27" id="sOe-eE-ZOF"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distanceTxtFld" destination="Glo-yH-Gv0" id="1R8-au-Zv9"/>
+                        <outlet property="locationTxtFld" destination="XPT-XJ-wfF" id="p8i-kK-Eo9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

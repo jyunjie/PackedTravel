@@ -9,10 +9,11 @@
 import UIKit
 
 class ListViewController: UIViewController {
-
+    var selectedBusinesses = [Business]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        print(selectedBusinesses)
         // Do any additional setup after loading the view.
     }
 
