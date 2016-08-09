@@ -25,7 +25,8 @@ class Business: NSObject {
         
         let imageURLString = dictionary["image_url"] as? String
         if imageURLString != nil {
-            imageURL = NSURL(string: imageURLString!)!
+            let replacedString = imageURLString!.stringByReplacingOccurrencesOfString("ms.jpg", withString: "348s.jpg")
+            imageURL = NSURL(string: replacedString)!
         } else {
             imageURL = nil
         }
