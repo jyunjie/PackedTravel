@@ -14,11 +14,15 @@ class Business: NSObject {
     let address: String?
     let imageURL: NSURL?
     let categories: String?
-    let distance: String?
+    let distance: Double?
     let ratingImageURL: NSURL?
     let reviewCount: NSNumber?
     var longitude = NSNumber()
     var latitude = NSNumber()
+    var businessURL : NSURL?
+    var reviewUserImage : NSURL?
+    var reviewText : String?
+    var phoneNum : NSNumber?
     
     init(dictionary: NSDictionary) {
         name = dictionary["name"] as? String
@@ -70,10 +74,9 @@ class Business: NSObject {
             categories = nil
         }
         
-        let distanceMeters = dictionary["distance"] as? NSNumber
+        let distanceMeters = dictionary["distance"] as? Double
         if distanceMeters != nil {
-            let milesPerMeter = 0.000621371
-            distance = String(format: "%.2f mi", milesPerMeter * distanceMeters!.doubleValue)
+            distance = distanceMeters
         } else {
             distance = nil
         }
@@ -83,6 +86,34 @@ class Business: NSObject {
             ratingImageURL = NSURL(string: ratingImageURLString!)
         } else {
             ratingImageURL = nil
+        }
+        
+        let snippetURLString = dictionary["snippet_image_url"] as? String
+        if snippetURLString != nil {
+            reviewUserImage = NSURL(string: snippetURLString!)
+        } else {
+            reviewUserImage = nil
+        }
+        
+        let websiteURL = dictionary["url"] as? String
+        if websiteURL != nil {
+            businessURL = NSURL(string: websiteURL!)
+        } else {
+            businessURL = nil
+        }
+        
+        let snippetText = dictionary["snippet_text"] as? String
+        if snippetText != nil {
+            reviewText = snippetText!
+        } else {
+            reviewText = nil
+        }
+        
+        let phoneNumber = dictionary["phone"] as? NSNumber
+        if phoneNumber != nil {
+            phoneNum = phoneNumber!
+        } else {
+            phoneNum = nil
         }
         
         reviewCount = dictionary["review_count"] as? NSNumber
