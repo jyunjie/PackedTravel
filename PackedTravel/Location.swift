@@ -11,16 +11,23 @@ import SwiftyJSON
 
 class Location {
     
-    var lng: Float!
-    var lat: Float!
+    static var currentLocation: Location?
+
+    
+    var lng: Double!
+    var lat: Double!
     var address: String!
     
     
     init(json: JSON) {
         print("running1")
         let result = json["results"][0]["geometry"]["location"]
-        self.lat = result["lat"].float
-        self.lng = result["lng"].float
+        self.lat = result["lat"].double
+        self.lng = result["lng"].double
+        
+        let loc = json["results"][0]
+        self.address = loc["formatted_address"].string
+
     }
     
 }

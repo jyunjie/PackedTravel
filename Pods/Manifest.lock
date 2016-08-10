@@ -20,9 +20,17 @@ PODS:
   - AFNetworking/UIKit (2.6.3):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - Alamofire (3.4.1)
   - BDBOAuth1Manager (1.6.0):
     - AFNetworking/NSURLConnection (~> 2.6.0)
     - AFNetworking/NSURLSession (~> 2.6.0)
+  - GoogleMaps (2.0.1):
+    - GoogleMaps/Maps (= 2.0.1)
+  - GoogleMaps/Base (2.0.1)
+  - GoogleMaps/Maps (2.0.1):
+    - GoogleMaps/Base (= 2.0.1)
+  - GooglePlaces (2.0.1):
+    - GoogleMaps/Base (= 2.0.1)
   - Koloda (3.1.1):
     - pop (~> 1.0)
   - pop (1.0.9)
@@ -33,19 +41,25 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
+  - Alamofire
   - BDBOAuth1Manager
+  - GoogleMaps
+  - GooglePlaces
   - Koloda (~> 3.1.1)
   - SDWebImage
   - SwiftyJSON
 
 SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  Alamofire: 01a82e2f6c0f860ade35534c8dd88be61bdef40c
   BDBOAuth1Manager: cd5a5872f355ca38180d52ca2dd844f0b0c84797
+  GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
+  GooglePlaces: 72fab1d1651c6df0322f2aad245ffb15b80d3c56
   Koloda: 782e61549cafec9fd69fc70c4a8b54bce997894d
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: cecf6fc2b6aa34984778a6bc385d910aa9622c23
+PODFILE CHECKSUM: 066ea58f758476ebd2ec87e7cd483f05343ab3d6
 
 COCOAPODS: 1.0.1

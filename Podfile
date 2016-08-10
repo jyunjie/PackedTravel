@@ -11,5 +11,8 @@ target 'PackedTravel' do
     pod 'BDBOAuth1Manager'
     pod 'SDWebImage'
     pod 'SwiftyJSON'
+    pod 'GooglePlaces'
+    pod 'GoogleMaps'
+    pod 'Alamofire'
     
 end

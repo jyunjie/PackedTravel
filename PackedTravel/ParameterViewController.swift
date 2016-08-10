@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class ParameterViewController: UIViewController {
     var businesses = [Business]()
     
+    var selectedLocation: Location!
     @IBOutlet var distanceTxtFld: UITextField!
     @IBOutlet var locationTxtFld: UITextField!
     
@@ -28,7 +31,10 @@ func dismissKeyboard() {
 }
 
     func findFirstHalf() {
-        Business.searchWithTerm("", sort:.HighestRated , categories:["amusementparks","waterparks","gardens","hot_air_balloons","aquariums","festivals"] , deals: nil, radius_filter: 50000,longitude: 3.105706 ,latitude:101.661973, completion: { (businesses:[Business]!, error: NSError!) -> Void in
+        print(Int(distanceTxtFld.text!)! * 1000)
+        print(CGFloat(selectedLocation.lng))
+        print(CGFloat(selectedLocation.lat))
+        Business.searchWithTerm("", sort:.HighestRated , categories:["amusementparks","waterparks","gardens","hot_air_balloons","aquariums","festivals"] , deals: nil, radius_filter: Int(distanceTxtFld.text!)! * 1000,longitude: CGFloat(selectedLocation.lat),latitude:CGFloat(selectedLocation.lng), completion: { (businesses:[Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             for business in businesses {
                 self.businesses.append(business)
@@ -39,21 +45,29 @@ func dismissKeyboard() {
             }
             
             print(self.businesses.count)
-            
-            
+            self.findSecondHalf {
+                self.performSegueWithIdentifier("placeSegue", sender: self)
+            }
         })
-        self.findSecondHalf()
+
     }
 
+    @IBAction func searchBtnOnClicked(sender: UIButton) {
+        getLocation(locationTxtFld.text!)
+    }
     
     
-    func findSecondHalf() {
-        Business.searchWithTerm("", sort: .HighestRated , categories:["museums","fleamarkets","tours","fireworks","localflavor"], deals: nil, radius_filter: 20000, longitude: 3.105706 ,latitude:101.661973 ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
+    func findSecondHalf(completionHandler:() -> ()) {
+        Business.searchWithTerm("", sort: .HighestRated , categories:["museums","fleamarkets","tours","fireworks","localflavor"], deals: nil, radius_filter: Int(distanceTxtFld.text!)! * 1000, longitude: CGFloat(selectedLocation.lat) ,latitude:CGFloat(selectedLocation.lng) ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
             for business in businesses {
                 self.businesses.append(business)
                 print(business.name!)
             }
+            completionHandler()
         })
+        
+        
+
        
     }
     
@@ -65,6 +79,29 @@ func dismissKeyboard() {
         destVc.businesses = self.businesses
         }
         
+    }
+    
+    func getLocation (location: String) {
+        var newString: String!
+        if location.containsString(" ") {
+            newString = location.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        }
+        
+        Alamofire.request(.GET, "https://maps.googleapis.com/maps/api/geocode/json?address=\(newString)&key=AIzaSyDhW5arAqiTATmGptRPs5G5s6uVKmrJO64")
+            .responseJSON { (response) in
+                switch response.result {
+                case.Success(let responseValue):
+                    let json = JSON(responseValue)
+                    self.selectedLocation = Location(json: json)
+                    print(self.selectedLocation.lat)
+                    print(self.selectedLocation.lng)
+                    print(self.selectedLocation.address)
+                    Location.currentLocation = self.selectedLocation
+                    self.findFirstHalf()
+                    case.Failure(let error):
+                    print(error.localizedDescription)
+                }
+        }
     }
     
 }
