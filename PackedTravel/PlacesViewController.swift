@@ -95,7 +95,7 @@ extension PlacesViewController: KolodaViewDelegate {
     
     func koloda(koloda: KolodaView, didSelectCardAtIndex index: UInt) {
         let indexPath: NSIndexPath = NSIndexPath(forRow: Int(index), inSection: 0)
-        let selectedItems = businesses[indexPath.row]
+        _ = businesses[indexPath.row]
         self.performSegueWithIdentifier("detailSegue", sender: self)
         
     }
