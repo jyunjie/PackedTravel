@@ -14,13 +14,25 @@ import MBProgressHUD
 class ParameterViewController: UIViewController {
     var businesses = [Business]()
     
+    
     var selectedLocation: Location!
     @IBOutlet var distanceTxtFld: UITextField!
     @IBOutlet var locationTxtFld: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        findFirstHalf()  // hard corded, remove this when insert realtime location
+        self.locationTxtFld.layer.cornerRadius = 15.0
+        self.locationTxtFld.layer.masksToBounds = true
+        self.locationTxtFld.backgroundColor = UIColor(white: 1, alpha: 0.3)
+        self.locationTxtFld.layer.borderColor = UIColor.grayColor().CGColor
+        self.locationTxtFld.layer.borderWidth = 1.0
+    
+        self.distanceTxtFld.layer.cornerRadius = 15.0
+        self.distanceTxtFld.layer.masksToBounds = true
+        self.distanceTxtFld.backgroundColor = UIColor(white: 1, alpha: 0.3)
+        self.distanceTxtFld.layer.borderColor = UIColor.grayColor().CGColor
+        self.distanceTxtFld.layer.borderWidth = 1.0
+        
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ParameterViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
