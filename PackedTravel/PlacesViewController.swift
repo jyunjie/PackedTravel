@@ -49,6 +49,8 @@ class PlacesViewController: UIViewController {
         svc.selectedBusinesses = selectedBusinesses
         print(selectedItems.name)
         kolodaView?.swipe(SwipeResultDirection.Right)
+        
+        Business.businessArray = selectedBusinesses
     }
     
     @IBAction func undoButtonTapped() {
