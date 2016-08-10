@@ -44,7 +44,11 @@ class PlacesViewController: UIViewController {
     
         kolodaView?.swipe(SwipeResultDirection.Right)
         
+        let sortedBusiness = self.selectedBusinesses.sort({ (first, second) -> Bool in
+            return first.distance < second.distance
+        })
         
+        Business.businessArray = sortedBusiness
     }
     
     @IBAction func undoButtonTapped() {
