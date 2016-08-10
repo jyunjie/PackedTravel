@@ -11,7 +11,6 @@ import UIKit
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     var selectedBusinesses = [Business]()
-    var sortedBikeStation = [Business]()
     
     override func viewDidLoad() {
         super.viewDidLoad()

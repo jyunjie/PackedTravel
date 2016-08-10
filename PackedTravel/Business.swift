@@ -10,6 +10,9 @@ import UIKit
 import CoreLocation
 
 class Business: NSObject {
+    
+    static var businessArray: [Business]?
+    
     let name: String?
     let address: String?
     let imageURL: NSURL?
