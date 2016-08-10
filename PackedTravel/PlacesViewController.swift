@@ -128,7 +128,7 @@ extension PlacesViewController: KolodaViewDataSource {
         let selectedItems = businesses[indexPath.row]
         let imageUrl =  selectedItems.imageURL!
         let image = UIImageView()
-        self.title = selectedItems.name
+        self.navigationItem.title = selectedItems.name
         image.sd_setImageWithURL(imageUrl)
         return image
     }
