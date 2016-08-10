@@ -225,7 +225,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.80392156859999997" green="0.26274509800000001" blue="0.27450980390000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="centerX" secondItem="SV0-mk-IYX" secondAttribute="centerX" id="UET-pU-KQi"/>
                                     <constraint firstAttribute="height" constant="74" id="YhV-HJ-XJF"/>
@@ -265,7 +265,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="MsR-jp-d3C" firstAttribute="top" secondItem="QMJ-Vy-hdY" secondAttribute="top" id="3jt-2w-wmA"/>
                                     <constraint firstItem="MsR-jp-d3C" firstAttribute="leading" secondItem="CiZ-lS-yvj" secondAttribute="leading" constant="73" id="SQg-9j-khq"/>
@@ -274,7 +273,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.96470588239999999" green="0.18039215689999999" blue="0.20000000000000001" alpha="0.75" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="1" green="0.277798041" blue="0.33469315910000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="CiZ-lS-yvj" secondAttribute="bottom" id="TiO-hm-575"/>
                             <constraint firstAttribute="trailing" secondItem="CiZ-lS-yvj" secondAttribute="trailing" id="U5a-zf-vDg"/>
@@ -390,6 +389,11 @@
                                                             <constraint firstAttribute="height" constant="50" id="6b1-Uu-2ej"/>
                                                             <constraint firstAttribute="width" constant="46" id="knn-GQ-NqD"/>
                                                         </constraints>
+                                                        <variation key="default">
+                                                            <mask key="constraints">
+                                                                <exclude reference="knn-GQ-NqD"/>
+                                                            </mask>
+                                                        </variation>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="862-XQ-h6v">
                                                         <rect key="frame" x="46" y="0.0" width="554" height="21"/>
@@ -661,11 +665,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="kCy-Tx-sHF"/>
+                                <exclude reference="gw4-fY-6pA"/>
+                                <exclude reference="622-yN-ak8"/>
                                 <exclude reference="J3Q-5b-N0X"/>
                                 <exclude reference="Y87-fk-hB3"/>
-                                <exclude reference="622-yN-ak8"/>
-                                <exclude reference="gw4-fY-6pA"/>
+                                <exclude reference="kCy-Tx-sHF"/>
                                 <exclude reference="oLk-oS-OEa"/>
                                 <exclude reference="q6k-oG-m2F"/>
                             </mask>

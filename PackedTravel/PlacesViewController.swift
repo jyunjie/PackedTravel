@@ -41,25 +41,31 @@ class PlacesViewController: UIViewController {
     
     @IBAction func rightButtonTapped() {
         print(self.kolodaView.currentCardIndex)
-        let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
-        let selectedItems = businesses[indexPath.row]
-        selectedBusinesses.append(selectedItems)
-        
-        
-        let barViewControllers = self.tabBarController?.viewControllers
-        let vc = barViewControllers![1] as! UINavigationController
-        let svc = vc.viewControllers[0] as! ListViewController
-        
-        
-        svc.selectedBusinesses = selectedBusinesses
-        print(selectedItems.name)
+    
         kolodaView?.swipe(SwipeResultDirection.Right)
         
-        Business.businessArray = selectedBusinesses
+        
     }
     
     @IBAction func undoButtonTapped() {
         kolodaView?.revertAction()
+    }
+    
+    func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
+        if direction == .Right{
+            let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
+            let selectedItems = businesses[indexPath.row]
+            selectedBusinesses.append(selectedItems)
+            
+            
+            let barViewControllers = self.tabBarController?.viewControllers
+            let vc = barViewControllers![1] as! UINavigationController
+            let svc = vc.viewControllers[0] as! ListViewController
+            
+            
+            svc.selectedBusinesses = selectedBusinesses
+            Business.businessArray = selectedBusinesses
+        }
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
