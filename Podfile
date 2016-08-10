@@ -14,5 +14,6 @@ target 'PackedTravel' do
     pod 'GooglePlaces'
     pod 'GoogleMaps'
     pod 'Alamofire'
+    pod 'MBProgressHUD'
     
 end

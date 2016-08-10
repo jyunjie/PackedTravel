@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import MBProgressHUD
 
 class ParameterViewController: UIViewController {
     var businesses = [Business]()
@@ -46,6 +47,7 @@ func dismissKeyboard() {
             
             print(self.businesses.count)
             self.findSecondHalf {
+                MBProgressHUD.hideHUDForView(self.view, animated: true)
                 self.performSegueWithIdentifier("placeSegue", sender: self)
             }
         })
@@ -53,6 +55,11 @@ func dismissKeyboard() {
     }
 
     @IBAction func searchBtnOnClicked(sender: UIButton) {
+        let spinnerActivity = MBProgressHUD.showHUDAddedTo(self.view, animated: true);
+        
+        spinnerActivity.label.text = "Logging in, please wait..";
+        
+        spinnerActivity.userInteractionEnabled = false;
         getLocation(locationTxtFld.text!)
     }
     
