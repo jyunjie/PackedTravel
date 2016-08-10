@@ -11,11 +11,12 @@ import UIKit
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet var tableView: UITableView!
     var selectedBusinesses = [Business]()
+    var indexPathValue = NSIndexPath()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(selectedBusinesses)
-
+        self.title = "Itinary"
         self.selectedBusinesses = self.selectedBusinesses.sort({ (first, second) -> Bool in
             return first.distance < second.distance
         })
@@ -43,17 +44,18 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = self.tableView.dequeueReusableCellWithIdentifier("placeCell", forIndexPath: indexPath)
         let selectedBusiness = self.selectedBusinesses[indexPath.row]
         cell.textLabel?.text = selectedBusiness.name
-        cell.detailTextLabel?.text = String(format: "%.2f", selectedBusiness.distance!)
+        cell.detailTextLabel?.text = String(format: "%.2f", selectedBusiness.distance!) + " meter away"
         return cell
     }
-    /*
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let cell = sender as? UITableViewCell {
+            let i = self.tableView.indexPathForCell(cell)!.row
+            if segue.identifier == "listDetailSegue" {
+                let vc = segue.destinationViewController as! ListDetailViewController
+                vc.business = self.selectedBusinesses[i]
+            }
+        }
     }
-    */
-
 }
