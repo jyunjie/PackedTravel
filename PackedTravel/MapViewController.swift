@@ -9,6 +9,8 @@
 import UIKit
 import GoogleMaps
 import GooglePlaces
+import Alamofire
+import SwiftyJSON
 
 class MapViewController: UIViewController {
     
@@ -32,14 +34,14 @@ class MapViewController: UIViewController {
         
         guard let business = Business.businessArray else { return }
         self.addAnnotation(business, mapView: mapView)
-        self.addOverlay(position, business: business, mapView: mapView)
+        self.addOverlayToMapView(position, business: business, mapView: mapView)
     }
     
     func addAnnotation(business: [Business], mapView: GMSMapView) {
         for i in 0..<business.count {
-            var place = business[i]
-            var position = CLLocationCoordinate2DMake(Double(place.latitude), Double(place.longitude))
-            var marker = GMSMarker(position: position)
+            let place = business[i]
+            let position = CLLocationCoordinate2DMake(Double(place.latitude), Double(place.longitude))
+            let marker = GMSMarker(position: position)
             marker.title = place.name!
             marker.map = mapView
         }
@@ -47,22 +49,98 @@ class MapViewController: UIViewController {
         mapView.reloadInputViews()
     }
     
-    func addOverlay(currentLocation: CLLocationCoordinate2D, business: [Business], mapView: GMSMapView) {
-        let path = GMSMutablePath()
-        path.addCoordinate(currentLocation)
-        let firstRoute = GMSPolyline(path: path)
-        firstRoute.map = mapView
+    func addOverlayToMapView(currentLocation: CLLocationCoordinate2D, business: [Business], mapView: GMSMapView){
         
         for i in 0..<business.count {
-            var loc = business[i]
-            var locPosition = CLLocationCoordinate2DMake(Double(loc.latitude), Double(loc.longitude))
-            path.addCoordinate(locPosition)
-            var route = GMSPolyline(path: path)
-            route.map = mapView
+            if i == 0 {
+                let loc = business[i]
+                print("--------------------------------------------------------------------------->>>>>>")
+                print(loc.latitude)
+                print(loc.longitude)
+                let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(currentLocation.latitude),\(currentLocation.longitude)&destination=\(loc.latitude),\(loc.longitude)&key=AIzaSyDhW5arAqiTATmGptRPs5G5s6uVKmrJO64"
+                
+                Alamofire.request(.GET, directionURL, parameters: nil).responseJSON { response in
+                    switch response.result {
+                    case .Success(let data):
+                        
+                        let json = JSON(data)
+                        print(json)
+                        let errornum = json["error"]
+                        if (errornum == true){
+                        }else{
+                            let routes = json["routes"].array
+                            if routes != nil{
+                                let overViewPolyLine = routes![0]["overview_polyline"]["points"].string
+                                print(overViewPolyLine)
+                                if overViewPolyLine != nil{
+                                    self.addPolyLineWithEncodedStringInMap(overViewPolyLine!, mapView: mapView)
+                                }
+                            }
+                            
+                        }
+                        
+                    case .Failure(let error):
+                        print("Request failed with error: \(error)")
+                    }
+                }
+            } else {
+                if i != business.count {
+                    let loc1 = business[i-1]
+                    let loc2 = business[i]
+                    
+                    let directionURL = "https://maps.googleapis.com/maps/api/directions/json?origin=\(loc1.latitude),\(loc1.longitude)&destination=\(loc2.latitude),\(loc2.longitude)&key=AIzaSyDhW5arAqiTATmGptRPs5G5s6uVKmrJO64"
+                    
+                    Alamofire.request(.GET, directionURL, parameters: nil).responseJSON { response in
+                        
+                        switch response.result {
+                            
+                        case .Success(let data):
+                            
+                            let json = JSON(data)
+                            print(json)
+                            
+                            let errornum = json["error"]
+                            
+                            
+                            if (errornum == true){
+                                
+                            }else{
+                                let routes = json["routes"].array
+                                
+                                if routes != nil{
+                                    
+                                    let overViewPolyLine = routes![0]["overview_polyline"]["points"].string
+                                    print(overViewPolyLine)
+                                    if overViewPolyLine != nil{
+                                        self.addPolyLineWithEncodedStringInMap(overViewPolyLine!, mapView: mapView)
+                                    }
+                                    
+                                }
+                                
+                                
+                            }
+                            
+                        case .Failure(let error):
+                            print("Request failed with error: \(error)")
+                        }
+                    }
+                } else {
+                    print("overlay finished")
+                }
+            }
+            
         }
     }
     
-    
+    func addPolyLineWithEncodedStringInMap(encodedString: String, mapView: GMSMapView) {
+        
+        let path = GMSMutablePath(fromEncodedPath: encodedString)
+        let polyLine = GMSPolyline(path: path)
+        polyLine.strokeWidth = 5
+        polyLine.strokeColor = UIColor.blueColor()
+        polyLine.map = mapView
+        
+    }
     
     
     /*
