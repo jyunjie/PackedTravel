@@ -34,7 +34,7 @@ class PlacesViewController: UIViewController {
         
         self.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal        // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func leftButtonTapped() {
         kolodaView?.swipe(SwipeResultDirection.Left)
     }
@@ -115,6 +115,7 @@ extension PlacesViewController: KolodaViewDataSource {
         let selectedItems = businesses[indexPath.row]
         let imageUrl =  selectedItems.imageURL!
         let image = UIImageView()
+        self.title = selectedItems.name
         image.sd_setImageWithURL(imageUrl)
         return image
     }
