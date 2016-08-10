@@ -16,7 +16,11 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let camera = GMSCameraPosition.cameraWithLatitude(location.lat, longitude: location.lng, zoom: 20)
+        // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        let camera = GMSCameraPosition.cameraWithLatitude(location.lat, longitude: location.lng, zoom: 10)
         let mapView = GMSMapView.mapWithFrame(CGRect.zero, camera: camera)
         mapView.myLocationEnabled = true
         view = mapView
@@ -28,26 +32,37 @@ class MapViewController: UIViewController {
         
         guard let business = Business.businessArray else { return }
         self.addAnnotation(business, mapView: mapView)
-        // Do any additional setup after loading the view.
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.addOverlay(position, business: business, mapView: mapView)
     }
     
     func addAnnotation(business: [Business], mapView: GMSMapView) {
         for i in 0..<business.count {
             var place = business[i]
-            var lat = CLLocationDegrees(place.latitude)
-            var lng = CLLocationDegrees(place.longitude)
-            var position = CLLocationCoordinate2DMake(lat, lng)
+            var position = CLLocationCoordinate2DMake(Double(place.latitude), Double(place.longitude))
             var marker = GMSMarker(position: position)
-            marker.map! = mapView
+            marker.title = place.name!
+            marker.map = mapView
         }
         
         mapView.reloadInputViews()
     }
+    
+    func addOverlay(currentLocation: CLLocationCoordinate2D, business: [Business], mapView: GMSMapView) {
+        let path = GMSMutablePath()
+        path.addCoordinate(currentLocation)
+        let firstRoute = GMSPolyline(path: path)
+        firstRoute.map = mapView
+        
+        for i in 0..<business.count {
+            var loc = business[i]
+            var locPosition = CLLocationCoordinate2DMake(Double(loc.latitude), Double(loc.longitude))
+            path.addCoordinate(locPosition)
+            var route = GMSPolyline(path: path)
+            route.map = mapView
+        }
+    }
+    
+    
     
     
     /*
