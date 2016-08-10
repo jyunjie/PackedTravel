@@ -44,8 +44,13 @@ class PlacesViewController: UIViewController {
         let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
         let selectedItems = businesses[indexPath.row]
         selectedBusinesses.append(selectedItems)
+        
+        
         let barViewControllers = self.tabBarController?.viewControllers
-        let svc = barViewControllers![1] as! ListViewController
+        let vc = barViewControllers![1] as! UINavigationController
+        let svc = vc.viewControllers[0] as! ListViewController
+        
+        
         svc.selectedBusinesses = selectedBusinesses
         print(selectedItems.name)
         kolodaView?.swipe(SwipeResultDirection.Right)
