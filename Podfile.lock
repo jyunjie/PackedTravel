@@ -33,6 +33,7 @@ PODS:
     - GoogleMaps/Base (= 2.0.1)
   - Koloda (3.1.1):
     - pop (~> 1.0)
+  - MBProgressHUD (1.0.0)
   - pop (1.0.9)
   - SDWebImage (3.8.1):
     - SDWebImage/Core (= 3.8.1)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - GoogleMaps
   - GooglePlaces
   - Koloda (~> 3.1.1)
+  - MBProgressHUD
   - SDWebImage
   - SwiftyJSON
 
@@ -56,10 +58,11 @@ SPEC CHECKSUMS:
   GoogleMaps: f09da64fc987c1aa29394567c3cab5a3df83c402
   GooglePlaces: 72fab1d1651c6df0322f2aad245ffb15b80d3c56
   Koloda: 782e61549cafec9fd69fc70c4a8b54bce997894d
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
   pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
   SDWebImage: 35f9627a3e44b4f292a8a8ce6a531fa488239b91
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-PODFILE CHECKSUM: 066ea58f758476ebd2ec87e7cd483f05343ab3d6
+PODFILE CHECKSUM: 5bd05573c49870256b4df0cd6d73566369ef0b00
 
 COCOAPODS: 1.0.1
