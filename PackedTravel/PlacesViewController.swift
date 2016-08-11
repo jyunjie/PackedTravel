@@ -26,12 +26,16 @@ class PlacesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController!.navigationBar.titleTextAttributes = ([NSFontAttributeName: UIFont(name: "SanFranciscoText-Light", size: 18)!])
+        let attributes = ([NSFontAttributeName: UIFont(name: "SanFranciscoText-Light", size: 11)!])
+        navigationController!.tabBarItem.setTitleTextAttributes(attributes, forState: .Normal)
+        self.tabBarController?.tabBar.barTintColor = UIColor.whiteColor()
         kolodaView.alphaValueSemiTransparent = kolodaAlphaValueSemiTransparent
         kolodaView.countOfVisibleCards = kolodaCountOfVisibleCards
         kolodaView.delegate = self
         kolodaView.dataSource = self
         kolodaView.animator = BackgroundKolodaAnimator(koloda: kolodaView)
-        
+
         self.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal        // Do any additional setup after loading the view.
     }
     
@@ -57,7 +61,7 @@ class PlacesViewController: UIViewController {
     
     func koloda(koloda: KolodaView, didSwipeCardAtIndex index: UInt, inDirection direction: SwipeResultDirection) {
         if direction == .Right{
-            let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
+            let indexPath: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex-1), inSection: 0)
             let selectedItems = businesses[indexPath.row]
             selectedBusinesses.append(selectedItems)
             
@@ -130,9 +134,12 @@ extension PlacesViewController: KolodaViewDataSource {
     func koloda(koloda: KolodaView, viewForCardAtIndex index: UInt) -> UIView {
         let indexPath: NSIndexPath = NSIndexPath(forRow: Int(index), inSection: 0)
         let selectedItems = businesses[indexPath.row]
-        let imageUrl =  selectedItems.imageURL!
+        
+        
+        let indexPathName: NSIndexPath = NSIndexPath(forRow: Int(self.kolodaView.currentCardIndex), inSection: 0)
+        self.navigationItem.title = businesses[indexPathName.row].name
+        let imageUrl =  selectedItems.imageURL
         let image = UIImageView()
-        self.navigationItem.title = selectedItems.name
         image.sd_setImageWithURL(imageUrl)
         return image
     }
@@ -142,12 +149,18 @@ extension PlacesViewController: KolodaViewDataSource {
                                                   owner: self, options: nil)[0] as? OverlayView
     }
     
+    @IBAction func backButton(sender: UIBarButtonItem) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        if let navigationController = storyboard.instantiateViewControllerWithIdentifier("RootViewController") as? UIViewController{
+            self.presentViewController(navigationController, animated: true, completion: nil)
+        }
+    }
 
 }
 
 
-  
-    
-    
+
+
+
     
    

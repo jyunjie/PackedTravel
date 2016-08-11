@@ -14,25 +14,39 @@ import MBProgressHUD
 class ParameterViewController: UIViewController {
     var businesses = [Business]()
     
+    @IBOutlet var searchBtn: UIButton!
     
     var selectedLocation: Location!
+    let leftImageView = UIImageView()
+    let leftImageView2 = UIImageView()
     @IBOutlet var distanceTxtFld: UITextField!
     @IBOutlet var locationTxtFld: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locationTxtFld.layer.cornerRadius = 15.0
-        self.locationTxtFld.layer.masksToBounds = true
-        self.locationTxtFld.backgroundColor = UIColor(white: 1, alpha: 0.3)
-        self.locationTxtFld.layer.borderColor = UIColor.grayColor().CGColor
-        self.locationTxtFld.layer.borderWidth = 1.0
-    
-        self.distanceTxtFld.layer.cornerRadius = 15.0
-        self.distanceTxtFld.layer.masksToBounds = true
-        self.distanceTxtFld.backgroundColor = UIColor(white: 1, alpha: 0.3)
-        self.distanceTxtFld.layer.borderColor = UIColor.grayColor().CGColor
-        self.distanceTxtFld.layer.borderWidth = 1.0
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "750_1334")!)
+//        self.searchBtn.layer.borderWidth = 0.5
+        self.searchBtn.layer.cornerRadius = 5
+//        self.searchBtn.backgroundColor = UIColor.init(white: 0.5, alpha: 0.5)
+        self.distanceTxtFld.underlineforTextField()
+        self.locationTxtFld.underlineforTextField()
+        
+        let leftView = UIView()
+        leftView.addSubview(leftImageView)
+        leftView.frame = CGRectMake(0, 0, 30, 20)
+        leftImageView.frame = CGRectMake(0, 0, 20, 20)
+        leftImageView.image = UIImage(named: "globe_asia-25");
+        locationTxtFld.leftView = leftView;
+        locationTxtFld.leftViewMode = UITextFieldViewMode.Always
+        
+        let leftView2 = UIView()
+        leftView2.addSubview(leftImageView2)
+        leftView2.frame = CGRectMake(0, 0, 30, 20)
+        leftImageView2.frame = CGRectMake(0, 0, 20, 20)
+        leftImageView2.image = UIImage(named: "near_me-25");
+        distanceTxtFld.leftView = leftView2;
+        distanceTxtFld.leftViewMode = UITextFieldViewMode.Always
         let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(ParameterViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
@@ -47,7 +61,7 @@ func dismissKeyboard() {
         print(Int(distanceTxtFld.text!)! * 1000)
         print(CGFloat(selectedLocation.lng))
         print(CGFloat(selectedLocation.lat))
-        Business.searchWithTerm("", sort:.HighestRated , categories:["amusementparks","waterparks","gardens","hot_air_balloons","aquariums","festivals"] , deals: nil, radius_filter: Int(distanceTxtFld.text!)! * 1000,longitude: CGFloat(selectedLocation.lat),latitude:CGFloat(selectedLocation.lng), completion: { (businesses:[Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("", sort: nil , categories:["amusementparks","waterparks","gardens","hot_air_balloons","aquariums","festivals"] , deals: nil, radius_filter: Int(distanceTxtFld.text!)! * 1000,longitude: CGFloat(selectedLocation.lat),latitude:CGFloat(selectedLocation.lng), completion: { (businesses:[Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             for business in businesses {
                 self.businesses.append(business)
@@ -69,7 +83,7 @@ func dismissKeyboard() {
     @IBAction func searchBtnOnClicked(sender: UIButton) {
         let spinnerActivity = MBProgressHUD.showHUDAddedTo(self.view, animated: true);
         
-        spinnerActivity.label.text = "Logging in, please wait..";
+        spinnerActivity.label.text = "Searching for places..";
         
         spinnerActivity.userInteractionEnabled = false;
         getLocation(locationTxtFld.text!)
@@ -77,7 +91,7 @@ func dismissKeyboard() {
     
     
     func findSecondHalf(completionHandler:() -> ()) {
-        Business.searchWithTerm("", sort: .HighestRated , categories:["museums","fleamarkets","tours","fireworks","localflavor"], deals: nil, radius_filter: Int(distanceTxtFld.text!)! * 1000, longitude: CGFloat(selectedLocation.lat) ,latitude:CGFloat(selectedLocation.lng) ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("", sort: nil , categories:["museums","fleamarkets","tours","fireworks","localflavor","nightlife"], deals: nil, radius_filter: Int(distanceTxtFld.text!)! * 1000, longitude: CGFloat(selectedLocation.lat) ,latitude:CGFloat(selectedLocation.lng) ,completion: { (businesses:[Business]!, error: NSError!) -> Void in
             for business in businesses {
                 self.businesses.append(business)
                 print(business.name!)
@@ -104,6 +118,8 @@ func dismissKeyboard() {
         var newString: String!
         if location.containsString(" ") {
             newString = location.stringByReplacingOccurrencesOfString(" ", withString: "+")
+        }else{
+            newString = location
         }
         
         Alamofire.request(.GET, "https://maps.googleapis.com/maps/api/geocode/json?address=\(newString)&key=AIzaSyDhW5arAqiTATmGptRPs5G5s6uVKmrJO64")
@@ -123,6 +139,21 @@ func dismissKeyboard() {
         }
     }
     
+    @IBAction func unwindToMenu(segue: UIStoryboardSegue) {}
+    
 }
 
+extension UITextField {
+    
+    func underlineforTextField() {
+        
+        let bottomborder = CALayer()
+        let WidthforBorder = CGFloat(1.0)
+        bottomborder.borderColor = UIColor.blackColor().CGColor // customize the color
+        bottomborder.frame = CGRectMake(0, self.frame.size.height - WidthforBorder, self.frame.size.width, self.frame.size.height)
+        bottomborder.borderWidth = WidthforBorder
+        self.layer.addSublayer(bottomborder)
+        self.layer.masksToBounds = true
+    }
+}
 
