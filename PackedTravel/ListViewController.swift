@@ -15,8 +15,14 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController!.navigationBar.titleTextAttributes = ([NSFontAttributeName: UIFont(name: "SanFranciscoText-Semibold", size: 18)!])
+        let attributes = ([NSFontAttributeName: UIFont(name: "SanFranciscoText-Light", size: 11)!])
+        navigationController!.tabBarItem.setTitleTextAttributes(attributes, forState: .Normal)
+       
+        
         print(selectedBusinesses)
-        self.title = "Itinary"
+        self.title = "Itinerary"
+        
         self.selectedBusinesses = self.selectedBusinesses.sort({ (first, second) -> Bool in
             return first.distance < second.distance
         })
@@ -43,8 +49,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("placeCell", forIndexPath: indexPath)
         let selectedBusiness = self.selectedBusinesses[indexPath.row]
-        cell.textLabel?.text = selectedBusiness.name
-        cell.detailTextLabel?.text = String(format: "%.2f", selectedBusiness.distance!) + " meter away"
+        cell.textLabel?.text = String(indexPath.row+1)+". "+selectedBusiness.name!
+        cell.detailTextLabel?.text = String(format: "%.0f", selectedBusiness.distance!) + " meter away"
         return cell
     }
 
